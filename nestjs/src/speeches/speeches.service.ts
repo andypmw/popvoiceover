@@ -10,6 +10,7 @@ import * as fs from 'fs';
 import { Injectable } from '@nestjs/common';
 import { CreateSpeechDto } from './dto/create-speech.dto';
 import { UpdateSpeechDto } from './dto/update-speech.dto';
+import map from './constants/aws/polly/soundmap';
 
 @Injectable()
 export class SpeechesService {
@@ -19,8 +20,8 @@ export class SpeechesService {
     const input: SynthesizeSpeechCommandInput = {
       OutputFormat: 'mp3',
       Engine: 'neural',
-      Text: 'Hello my name is Justin. How are you?',
-      VoiceId: 'Justin'
+      Text: createSpeechDto.Text,
+      VoiceId: map[createSpeechDto.LanguageCode]
     };
 
     const command = new SynthesizeSpeechCommand(input);

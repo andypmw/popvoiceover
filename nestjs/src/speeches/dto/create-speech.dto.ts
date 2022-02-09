@@ -1,1 +1,5 @@
-export class CreateSpeechDto {}
+export class CreateSpeechDto {
+  Text: string;
+
+  LanguageCode: string;
+}

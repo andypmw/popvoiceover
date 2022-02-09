@@ -1,0 +1,35 @@
+let map = {};
+
+map['arb'] = 'Zeina';
+map['cmn-CN'] = 'Zhiyu';
+map['da-DK'] = 'Mads';
+map['nl-NL'] = 'Ruben';
+map['en-AU'] = 'Russell';
+map['en-GB'] = 'Brian';
+map['en-IN'] = 'Raveena';
+map['en-NZ'] = 'Aria';
+map['en-ZA'] = 'Ayanda';
+map['en-US'] = 'Justin';
+map['en-GB-WLS'] = 'Geraint';
+map['fr-FR'] = 'Mathieu';
+map['fr-CA'] = 'Gabrielle';
+map['hi-IN'] = 'Aditi';
+map['de-DE'] = 'Hans';
+map['is-IS'] = 'Karl';
+map['it-IT'] = 'Giorgio';
+map['ja-JP'] = 'Takumi';
+map['ko-KR'] = 'Seoyeon';
+map['nb-NO'] = 'Liv';
+map['pl-PL'] = 'Jan';
+map['pt-BR'] = 'Ricardo';
+map['pt-PT'] = 'Cristiano';
+map['ro-RO'] = 'Carmen';
+map['ru-RU'] = 'Maxim';
+map['es-ES'] = 'Enrique';
+map['es-MX'] = 'Mia';
+map['es-US'] = 'Miguel';
+map['sv-SE'] = 'Astrid';
+map['tr-TR'] = 'Filiz';
+map['cy-GB'] = 'Gwyneth';
+
+export default map;
