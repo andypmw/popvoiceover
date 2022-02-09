@@ -1,0 +1,35 @@
+let map = {};
+
+map['arb'] = 'ar';
+map['cmn-CN'] = 'zh';
+map['da-DK'] = 'da';
+map['nl-NL'] = 'nl';
+map['en-AU'] = 'en';
+map['en-GB'] = 'en';
+map['en-IN'] = 'en';
+map['en-NZ'] = 'en';
+map['en-ZA'] = 'en';
+map['en-US'] = 'en';
+map['en-GB-WLS'] = 'en';
+map['fr-FR'] = 'fr';
+map['fr-CA'] = 'fr0CA';
+map['hi-IN'] = 'hi';
+map['de-DE'] = 'de';
+map['is-IS'] = 'is';
+map['it-IT'] = 'it';
+map['ja-JP'] = 'ja';
+map['ko-KR'] = 'ko';
+map['nb-NO'] = 'no';
+map['pl-PL'] = 'pl';
+map['pt-BR'] = 'pt';
+map['pt-PT'] = 'pt-PT';
+map['ro-RO'] = 'ro';
+map['ru-RU'] = 'ro';
+map['es-ES'] = 'es';
+map['es-MX'] = 'es-MX';
+map['es-US'] = 'es';
+map['sv-SE'] = 'sv';
+map['tr-TR'] = 'tr';
+map['cy-GB'] = 'cy';
+
+export default map;
