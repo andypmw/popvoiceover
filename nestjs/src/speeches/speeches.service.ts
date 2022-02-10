@@ -11,15 +11,19 @@ import { Injectable } from '@nestjs/common';
 import { CreateSpeechDto } from './dto/create-speech.dto';
 import { UpdateSpeechDto } from './dto/update-speech.dto';
 import map from './constants/aws/polly/soundmap';
+import neuralList from './constants/aws/polly/neural';
 
 @Injectable()
 export class SpeechesService {
   async create(createSpeechDto: CreateSpeechDto) {
     const client = new PollyClient({ region: 'ap-southeast-1'});
 
+    // Check, is the language support neural mode?
+    const mode = neuralList.filter(item => item.code === createSpeechDto.LanguageCode).length > 0? 'neural' : 'standard';
+
     const input: SynthesizeSpeechCommandInput = {
       OutputFormat: 'mp3',
-      Engine: 'neural',
+      Engine: mode,
       Text: createSpeechDto.Text,
       VoiceId: map[createSpeechDto.LanguageCode]
     };
