@@ -18,6 +18,8 @@ export default function EditScreenInfo({ path }: { path: string }) {
   const [targetLanguageCode, setTargetLanguageCode] = useState();
   const [targetText, setTargetText] = useState('');
 
+  const [translateState, setTranslateState] = useState('idle');
+
   const defaultSourceLanguageCode = 'id';
   const defaultTargetLanguageCode = 'en-US';
 
@@ -36,6 +38,8 @@ export default function EditScreenInfo({ path }: { path: string }) {
   }, []);
 
   function handleTranslate() {
+    setTranslateState('processing');
+
     const parameter = {
       Text: sourceText,
       SourceLanguageCode: sourceLanguageCode,
@@ -45,9 +49,11 @@ export default function EditScreenInfo({ path }: { path: string }) {
     axios
       .post('http://10.8.0.12:4000/translates/', parameter)
       .then(response => {
+        setTranslateState('idle');
         setTargetText(response.data.TranslatedText);
       })
       .catch(error => {
+        setTranslateState('idle');
         console.log(error);
       });
   }
@@ -69,7 +75,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           style={styles.textInput}
           onChangeText={setSourceText}
         />
-        <Button title="Translate" onPress={handleTranslate} />
+        <Button title={translateState === 'idle'? 'Translate' : 'Translating...'} onPress={handleTranslate} />
 
         <Text style={styles.langLabel}>TARGET LANGUAGE</Text>
         <Picker
