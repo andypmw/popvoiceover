@@ -9,6 +9,8 @@ import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const apiPrefix = 'http://10.8.0.12:4000';
+
   const [sourceLanguageList, setSourceLanguageList] = useState([]);
   const [targetLanguageList, setTargetLanguageList] = useState([]);
 
@@ -25,13 +27,13 @@ export default function EditScreenInfo({ path }: { path: string }) {
 
   useEffect(() => {
     axios
-      .get('http://10.8.0.12:4000/translates/source-languages')
+      .get(apiPrefix + '/translates/source-languages')
       .then(response => {
         setSourceLanguageList(response.data);
       });
 
     axios
-      .get('http://10.8.0.12:4000/speeches/speech-languages')
+      .get(apiPrefix + '/speeches/speech-languages')
       .then(response => {
         setTargetLanguageList(response.data);
       });
@@ -47,7 +49,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
     };
 
     axios
-      .post('http://10.8.0.12:4000/translates/', parameter)
+      .post(apiPrefix + '/translates/', parameter)
       .then(response => {
         setTranslateState('idle');
         setTargetText(response.data.TranslatedText);

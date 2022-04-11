@@ -16,9 +16,11 @@ const Home: NextPage = ( data ) => {
 
 export async function getServerSideProps() {
 
-  const translateSourceLanguages = await (await axios.get('http://localhost:4000/translates/source-languages')).data;
-  const speechLanguages = await (await axios.get('http://localhost:4000/speeches/speech-languages')).data;
-  const translateToPollyMap = await (await axios.get('http://localhost:4000/translates/translate-to-polly-map')).data;
+  const apiPrefix = 'http://localhost:4000';
+
+  const translateSourceLanguages = await (await axios.get(apiPrefix + '/translates/source-languages')).data;
+  const speechLanguages = await (await axios.get(apiPrefix + '/speeches/speech-languages')).data;
+  const translateToPollyMap = await (await axios.get(apiPrefix + '/translates/translate-to-polly-map')).data;
 
   return {
     props: {
