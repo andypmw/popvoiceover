@@ -8,6 +8,17 @@
 
 [Dojotek](https://dojotek.id) PopVoiceOver repository. Nest.js for REST API, Next.js for Web App.
 
+## Demo
+
+- The React.js web app, video demo: https://twitter.com/AndyPmw/status/1491604829793239044
+- The React Native (Expo) app, video demo: https://twitter.com/AndyPmw/status/1491766772566953984
+
+The React.js web app screenshot:
+![web app screenshot](https://github.com/dojotek/popvoiceover/blob/main/pics/popvoiceover-web-nextjs.png?raw=true)
+
+The React Native (Expo) mobile-app screenshot:
+![mobile app screenshot](https://github.com/dojotek/popvoiceover/blob/main/pics/popvoiceover-mobile-react-native.png?raw=true)
+
 ## Installation
 
 For Nest.js:
